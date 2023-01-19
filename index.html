@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<!-- Mobile responsivity -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	
+	<title>Tile Calculator</title>
+	
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLDfile:///C:/Users/uyuyf/Documents/batch204/tileCalc/Images/tile.png69Npy4HI+N" crossorigin="anonymous">
+
+	<!-- External CSS -->
+	<link rel="stylesheet" type="text/css" href="index.css">
+
+	<!-- Google Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+	<section class="background">
+		<div class="container-bg d-flex">
+			<a class="navbar-brand w-100 pl-3 d-flex align-items-center h-50" href="#About">
+				<img src="./Images/logo.png" alt="logo" class="logo pr-1">
+				TILE CALCULATOR
+			</a>
+		</div>
+	</section>
+	<div class="wrapper text-center container-fluid pt-3">
+		<form>
+			
+			<div>
+				<input type="number" value="0" id="answer" class="text-center">
+			</div>	
+			<div id="top" class="text-center">
+				<h5 class="tilesText mb-5 mb-md-3">TILES</h5>
+			</div>
+			<div class="d-flex flex-column flex-sm-row justify-content-center">
+
+			<!-- TILE -->
+				<div class="tile py-sm-1 pr-1 w-xs-50 w-100 ">
+					<div class="d-flex justify-content-center">
+						<h3 class="w-75 ml-sm-auto">Tile</h3>
+					</div>
+					<div class="d-flex justify-content-center">
+						<div class="w-75 ml-sm-auto d-flex justify-content-center">
+							<img class="tile" src="./Images/tile.png" alt="tile" id="tileImg">
+							<img class="tileArea justify-content-center" src="./Images/tileArea.png" alt="tileArea" id="tileAreaImg">
+							<img class="tileDim justify-content-center"src="./Images/tileDim.png" alt="tileDim" id="tileDimImg">
+						</div>
+					</div>
+
+						<!-- Dropdown -->
+					<div class="select-box d-flex justify-content-center">
+						<select id="tileOption" class="ml-sm-auto text-center"  onchange="showTileFields()">
+							<option value="select">Select</option>
+							<option value="dimensions">Dimensions</option>
+							<option value="area">Area</option>
+						</select>
+					</div>
+
+					<div class="d-flex justify-content-center">
+						<div class="w-75 ml-sm-auto">
+							<div id="tileDimensions">
+								<div class="length">
+									<p class="pt-3">length (in cm)</p>
+									<input class="w-100" type="number" value="0" id="length-1">
+								</div>
+								<div class="width pb-3">
+									<p class="pt-3">width (in cm)</p>
+									<input class="w-100" type="number" value="0" id="width-1">
+								</div>
+							</div>
+							<div id="tileArea" class=" pb-3">
+								<p class="pt-3">area (in sq cm)</p>
+								<input class="w-100" type="number" value="0" id="area-1">
+							</div>
+						</div>
+					</div>
+				</div>
+
+			<!-- FLOOR -->
+			<div class="floor py-sm-1 pl-1 w-xs-50 w-100">
+				<div class="d-flex justify-content-center">
+					<h3 class="w-75 mr-sm-auto mt-5 mt-sm-0">Floor</h3>
+				</div>
+				<div class="d-flex justify-content-center">
+					<div class="w-75 mr-sm-auto d-flex justify-content-center">
+						<img src="./Images/floor.png" class="floor justify-content-center" alt="floor" id="floorImg">
+						<img src="./Images/floorArea.png" class="floorArea justify-content-center" alt="floorArea" id="floorAreaImg">
+						<img src="./Images/floorDim.png" class="floorDim justify-content-center" alt="floorDim" id="floorDimImg">
+					</div>
+				</div>
+
+				<!-- Dropdown -->
+				<div class="select-box d-flex justify-content-center">
+					<select class="mr-sm-auto text-center" id="flrOption" onchange="showFlrFields()">
+						<option value="select">Select</option>
+						<option value="dimensions">Dimensions</option>
+						<option value="area">Area</option>
+					</select>
+				</div>
+
+				<div class="d-flex justify-content-center">
+					<div class="w-75 mr-sm-auto">
+						<div id="flrDimensions">
+							<div>
+								<p class="pt-3">length (in cm)</p>
+								<input class="w-100" type="number" value="0" id="length-2">
+							</div>
+							<div class="width pb-3">
+								<p class="pt-3">width (in cm)</p>
+								<input class="w-100" type="number" value="0" id="width-2">
+							</div>
+						</div>
+						<div id="flrArea" class="pb-3">
+							<p class="pt-3">area (in sq cm)</p>
+							<input class="w-100" type="number" value="0" id="area-2">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Tiles Needed -->
+		<div class="pt-3 d-flex justify-content-center">
+			<div class="w-75 mb-5">
+				
+				<button onclick="topFunction()" type="submit" id="button">Calculate</button>
+				
+			</div>
+		</div>
+	</form>
+</div>
+
+	<!-- JS Dependencies -->
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+	<script src="./index.js"></script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+/* CSS Reset */
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	color: #324B4C;
+	font-family: 'Lato', sans-serif;
+	background-color: #fff;
+}
+
+html{
+	scroll-behavior: smooth;
+}
+
+/*Navbar*/
+.navbar-brand{
+	color: #555A60;
+	background-color: #E3E9EC;
+	margin: 0;
+	font-size: 12px;
+}
+.background{
+	min-height: 1rem;
+	background-image: url(./Images/headBg.png);
+	background-size: 100%;
+}
+
+#tileArea{
+	display: none;
+}
+
+#tileDimensions{
+	display: none;
+}
+
+#flrArea{
+	display: none;
+}
+
+#flrDimensions{
+	display: none;
+}
+
+h3{
+	font-size: 28px;
+	color: #555A60;
+}
+
+.tilesText{
+	color: #F4AB41;
+}
+
+img{
+	align-content: center;
+}
+
+form :where(input, select){
+	width: 75%;
+	outline: none;
+	border: none;
+	border-radius: 5px;
+}
+
+form p{
+	font-size: 18px;
+	margin bottom: 5px;
+}
+
+form input{
+	height: 50px;
+	font-size: 17px;
+	padding: 0 15px;
+	border: 1px solid #E3E9EC;
+}
+
+form input:focus{
+	padding: 0 14px;
+	border: 2px solid #E3E9EC;
+}
+
+.select-box select{
+	height: 50px;
+	border-radius: 5px;
+	border: 1px solid #E3E9EC;
+}
+
+form button{
+	outline: none;
+	border: none;
+	border-radius: 5px;
+	height: 52px;
+	width: 100%;
+	color: #F4AB41;
+	font-size: 17px;
+	background: #E3E9EC;
+}
+
+button:hover{
+	color: white;
+	font-weight: 500;
+	text-decoration: none;
+	background-color: #F4AB41;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#answer{
+	border: none;
+	padding-top: 3px;
+	font-size: 60px;
+	font-weight: 700;
+	color: #F4AB41;
+}
+
+H5{
+	font-size: 15px;
+	color: #555A60;
+}
+
+.logo{
+	background-color: #E3E9EC;
+	width: 30px;
+}
+
+.tile, .tileArea, .tileDim, .floor, .floorArea, .floorDim{
+	width: 300px;
+}
+
+@media only screen and (max-width: 768px){
+	.tile, .tileArea, .tileDim, .floor, .floorArea, .floorDim{
+	width: 200px;
+	}
+	h3{
+		font-size: 20px;
+	}
+	#answer{
+		font-size: 45px;
+	}
+}
+
+#flrOption, #tileOption{
+	font-weight: 400;
+	color: #555A60;
+}
