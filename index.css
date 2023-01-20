@@ -109,8 +109,11 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-#answer{
+#answer input{
 	box-sizing: border-box;
+}
+
+#answer{
 	border: none;
 	padding-top: 3px;
 	font-size: 60px;
